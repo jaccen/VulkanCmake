@@ -5,6 +5,7 @@ namespace app {
 std::unique_ptr<Application> Application::instance_ = nullptr;
 
 void Application::Init(uint32_t w, uint32_t h) {
+
   if (instance_ == nullptr) {
     instance_.reset(new Application(w, h));
     instance_->initwindow();
@@ -14,7 +15,9 @@ void Application::Init(uint32_t w, uint32_t h) {
   }
 }
 
-void Application::Quit() { instance_.reset(); }
+void Application::Quit() {
+    instance_.reset(); 
+}
 
 void Application::run() {
   // showPropInfo();
@@ -152,9 +155,9 @@ void Application::createShaderModules() {
   std::string vertexSource, fragSource;
   try {
     vertexSource =
-        readSpvFile("C:/Users/Sy200/Desktop/Project/Application/spv/vert.spv");
+        readSpvFile("");
     fragSource =
-        readSpvFile("C:/Users/Sy200/Desktop/Project/Application/spv/frag.spv");
+        readSpvFile("");
     if (vertexSource.size() == 0 || fragSource.size() == 0) {
       throw std::runtime_error("Shader file read failed!!!\n");
     } else {
