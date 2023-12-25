@@ -155,9 +155,9 @@ void Application::createShaderModules() {
   std::string vertexSource, fragSource;
   try {
     vertexSource =
-        readSpvFile("");
+        readSpvFile("D:\\Engine\\VulkanCmake\\assets\\shader\\triangle.vert.spv");
     fragSource =
-        readSpvFile("");
+        readSpvFile("D:\\Engine\\VulkanCmake\\assets\\shader\\triangle.frag.spv");
     if (vertexSource.size() == 0 || fragSource.size() == 0) {
       throw std::runtime_error("Shader file read failed!!!\n");
     } else {
